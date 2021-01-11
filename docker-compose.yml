@@ -8,6 +8,12 @@ services:
     build: ./app2
     ports:
     - "5002:5000"
+  exam:
+    build:
+      context: ./exam
+      dockerfile: Dockerfile
+    ports:
+    - "5003:8080"
   nginx:
     build: ./nginx 
     ports:
@@ -15,3 +21,4 @@ services:
     depends_on:
       - app1
       - app2
+      - exam
